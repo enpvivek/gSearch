@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { useSession, signIn, signOut } from "next-auth/react";
 
 export default function User({ className }) {
