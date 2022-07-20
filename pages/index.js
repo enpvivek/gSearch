@@ -24,13 +24,15 @@ export default function Home() {
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
         />
 
-        <div className="flex mt-5  w-full sm:max-w-[90%] md:max-w-[70%] lg:max-w-[50%] px-5 py-2.5 border border-gray-300 rounded-full hover:shadow-lg focus-within:shadow-lg">
-          <SearchIcon className="h-5 text-gray-500" />
+        <div className="flex mt-5  w-full max-w-[90%] sm:max-w-sl lg:max-w-3xl px-5 py-2.5 border border-gray-300 rounded-full hover:shadow-lg focus-within:shadow-lg">
+          <SearchIcon className="h-5 text-gray-500 mr-3" />
           <input type="text" className="flex-grow focus:outline-none"></input>
           <MicrophoneIcon className="h-5  text-gray-500" />
         </div>
-        <button> Google Search</button>
-        <button>{`I'm Feeling Lucky`}</button>
+        <div className="flex flex-col sm:flex-row mt-8 space-y-2 w-[50%] sm:space-y-0 sm:space-x-4 justify-center">
+          <button className="btn"> Google Search</button>
+          <button className="btn">{`I'm Feeling Lucky`}</button>
+        </div>
       </form>
 
       {/* Footer */}
