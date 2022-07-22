@@ -13,7 +13,7 @@ const search = ({ results }) => {
   return (
     <div>
       <Head>
-        <title>{router.query.term} G-search</title>
+        <title>{router.query.term} - Gsearch</title>
       </Head>
 
       {/* Search Header */}
