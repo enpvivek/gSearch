@@ -5,6 +5,7 @@ import SearchHeader from "../components/SearchHeader";
 import SearchResults from "../components/SearchResults";
 import Response from "../Response";
 import { useRouter } from "next/router";
+import ImageResults from "../components/ImageResults";
 
 const search = ({ results }) => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -20,7 +21,11 @@ const search = ({ results }) => {
       <SearchHeader />
 
       {/* Search Results */}
-      <SearchResults results={results} />
+      {router.query.searchType === "image" ? (
+        <ImageResults results={results} />
+      ) : (
+        <SearchResults results={results} />
+      )}
     </div>
   );
 };
@@ -28,7 +33,7 @@ const search = ({ results }) => {
 export default search;
 
 export async function getServerSideProps(context) {
-  const startIndex = context.query.start || "1"
+  const startIndex = context.query.start || "1";
   const mockData = true;
   const data = mockData
     ? Response
@@ -37,7 +42,7 @@ export async function getServerSideProps(context) {
           process.env.GSEARCH_API_KEY
         }&cx=${process.env.CONTEXT_KEY}&q=${context.query.term}${
           context.query.searchType && "&searchType=image"
-        } &start=${startIndex}`
+        }&start=${startIndex}`
       ).then((response) => response.json());
   return {
     props: {
