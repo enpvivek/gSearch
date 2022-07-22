@@ -7,7 +7,8 @@ import Response from "../Response";
 import { useRouter } from "next/router";
 import ImageResults from "../components/ImageResults";
 
-const Search = ({ results }) => {
+const search = ({ results }) => {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const router = useRouter();
   console.log(results);
   return (
